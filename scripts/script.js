@@ -133,7 +133,7 @@ function displayLatestPosts(data){
 
 const search = async() => {
     const searchValue = getElementById('search-value');
-    const input = searchValue.value;
+    let input = searchValue.value;
     const blogContainer = getElementById("blog-container");
     blogContainer.innerHTML = '';
     
@@ -142,7 +142,7 @@ const search = async() => {
     const data = await res.json();
     let searchArray = [];
     data.posts.map(post => {
-        if(input === post.category.toLowerCase()){
+        if(input.toLowerCase() === post.category.toLowerCase()){
             searchArray.push(post);
         }
     })
