@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Forum</title>
+    <!-- DaisyUI & Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar Section -->
+      <section class="py-5">
+        <div class="navbar bg-base-100 container mx-auto">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><div><a>Home</a></div></li>
+                <li><div><a>Edit</a></div></li>
+                <li><div><a>Account</a></div></li>
+                <li><div><a>About</a></div></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-4xl font-black">ReTro</a>
+          </div>
+          <div class="navbar-end">
+            <ul class="menu menu-horizontal px-1 hidden lg:flex">
+              <li>
+                <a class="tooltip" data-tip="This is Home"><img src="images/home.png" alt="" /></a>
+              </li>
+              <li>
+                <a class="tooltip" data-tip="This is Edit"><img src="images/pen.png" alt="" /></a>
+              </li>
+              <li>
+                <a class="tooltip" data-tip="This is Account"><img src="images/people.png" alt="" /></a>
+              </li>
+              <li>
+                <a class="tooltip" data-tip="This is About"><img src="images/flag.png" alt="" /></a>
+              </li>
+            </ul>
+            <a class="btn rounded-full bg-[#797DFC] text-white font-bold"
+              >Sigh In</a
+            >
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- Banner Section -->
+      <section>
+        <div class="container mx-auto rounded-3xl bg-[#12132D]">
+          <div
+            class="min-h-screen py-5 flex flex-col lg:flex-row justify-evenly items-center"
+            style="
+              background-image: url(images/bgbanner.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position-y: bottom;
+            "
+          >
+            <div class="space-y-5 p-5">
+              <h2 class="text-5xl lg:text-7xl text-white font-black">
+                Welcome to the <br /><span
+                  class="bg-gradient-to-r from-[#797DFC] to-blue-800 inline-block text-transparent bg-clip-text"
+                  >ReTro</span
+                >
+                Forum
+              </h2>
+              <p class="text-xl font-medium text-white">
+                Share your favorite opinion and win and wp <br />
+                forum coffee mug!
+              </p>
+              <div
+                className="join"
+                class="pl-8 p-2 flex bg-white rounded-full justify-between"
+              >
+                <input
+                  id="search-value"
+                  className="input p-5 outline-none join-item"
+                  placeholder="Search here anything"
+                />
+                <button
+                  onclick="search()"
+                  className="btn join-item rounded-r-full"
+                  class="bg-[#797DFC] px-5 py-3 text-white font-bold rounded-full"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-12 text-2xl font-medium">
+              <div class="flex justify-between">
+                <p class="mr-5">Registered Users</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="mr-5">Forum</p>
+                <p>05</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="mr-5">Topics</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="mr-5">Replies</p>
+                <p>01</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Body Section -->
+      <section class="my-10 p-5">
+        <div>
+          <h2 class="text-5xl text-center font-black mb-5">Let's Discuss</h2>
+          <p class="text-center">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined.
+          </p>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section class="p-5">  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto">
+          <div id="blog-container" class="md:col-span-2">
+            
+          </div>
+          <div class="mt-5">
+            <div id="marked-container" class="p-5 space-y-5 rounded-3xl bg-[#12132D0D]">
+                <div class="flex justify-between">
+                    <h2 class="font-bold text-xl">Title</h2>
+                    <p class=""><img class="mr-1 inline-block" src="images/tick.svg" alt="">Mark as read (<span id="mark-count">0</span>)</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Forum Section -->
+      <section class="mt-5">
+        <div class="hero bg-[#12132D] py-5 container mx-auto rounded-3xl">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+              <img
+                src="images/joinforum.png"
+                class="w-auto rounded-lg shadow-2xl py-5" />
+              <div>
+                <h1 class="text-5xl text-white font-bold">Join Our Forum</h1>
+                <p class="py-6 text-[#ffffffcc]">
+                  Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app.
+                </p>
+                <button class="btn btn-primary text-lg bg-[#797DFC] text-white rounded-full border-none">Registered Now</button>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- Post Section -->
+      <section class="my-10 p-5">
+        <div>
+          <h2 class="text-5xl text-center font-black mb-5">Latest Post's</h2>
+          <p class="text-center">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined.
+          </p>
+        </div>
+      </section>
+
+      <!-- Card Section -->
+      <section class="p-5">
+        <div id="latest-posts" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        </div>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="mt-20">
+        <footer class="footer footer-center bg-base-200 text-base-content rounded py-10">
+            <a href=""><img src="images/logo.png" alt=""></a>
+            <p >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a <br> piece of classical Latin literature from 45 BC</p>
+            <nav>
+              <div class="grid grid-flow-col gap-4">
+                <a>
+                    <i class="fa-brands fa-twitter text-3xl"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-instagram text-3xl"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-facebook text-3xl"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-github text-3xl"></i>
+                </a>
+              </div>
+            </nav>
+            <div  class="border-b  w-full border-gray-200">
+
+            </div>
+            <aside>
+              <p>2017, All Rights Reserved.</p>
+            </aside>
+          </footer>
+    </footer>
+
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
